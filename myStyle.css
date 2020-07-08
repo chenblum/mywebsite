@@ -1,0 +1,888 @@
+﻿
+@font-face {
+    font-family: 'GveretLevinAlefAlefAlef-Regular';
+    src: url('../fonts/GveretLevinAlefAlefAlef-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../fonts/Rubik-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('../fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('../fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+body {
+    direction: rtl;
+}
+
+#container {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 220px;
+    background-image: url('../images/FullBrickWallBG.svg');
+    background-repeat: repeat-y;
+    background-size: 1280px auto;
+    position: relative;
+}
+/*לחצן דילוג לתוכן מרכזי*/
+
+a#skip {
+    position: absolute;
+    top: auto;
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+    left: -999px;
+    z-index: -999;
+}
+
+    a#skip:focus, a#skip:active  {
+        color: #fff;
+        background-color: #fff;
+        top: 15px;
+        right: 60px;
+        overflow: visible;
+        width: 20%;
+        height: auto;
+        color: deeppink;
+        margin: 5px 35%;
+        padding: 15px;
+        border: 4px solid deeppink;
+        text-align: center;
+        z-index: 999;
+    }
+
+
+    /*הגדרת איזור ההדר - חוזר בכל הדפים*/
+header {
+        width: 1280px;
+        height: 192px;
+        position: sticky;
+        background-image: url('../images/BGHeader-01.svg');
+        display: flex;
+        background-repeat: no-repeat;
+    }
+
+    #logo {
+        width: 198px;
+        height: 210px;
+        background-image: url('../images/WebLogo.svg');
+        background-size: 105px auto;
+        background-position-x: right;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        margin:10px;
+    }
+    /*מיקום טקטים לצד הלוגו*/
+    #logo h1, #logo h2 , .logoT, .H-gveret{
+            padding-right: 60px;
+    }
+
+    #logo h1, .logoT {
+            padding-top: 90px;
+            font-family: 'Rubik-Bold', sans-serif;
+            font-size: 24px;
+    }
+
+    /*פונט גברת לוין משותף לכותרת ברמה 2 ולכפתורים*/
+    /*ביטול בולד לכותרת (ברירת מחדל של הדפדפן*/
+        #logo h2,
+        .btn,
+        #HPmain h4,
+        #Accesability h4,
+        .gveret {
+            font-family: 'GveretLevinAlefAlefAlef-Regular';
+            font-weight: normal;
+            /*גודל פונט כתב יד לסלוגן ולכפתורים*/
+            font-size: 18px;
+        }
+
+
+#HPmain h3,
+#Accesability  h3{
+    padding-bottom: 30px;
+    font-family: 'Rubik-Bold', sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#HPmain h4,
+#Accesability h4 {
+    font-size: 24px;
+}
+
+#HPmain p,
+#Accesability p{
+    font-family: Rubik-Regular;
+    font-size: 18px;
+}
+
+/*הגדרת איזור תפריט ניווט ראשי*/
+nav {
+    width: 947px;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+/*הגדרת מאפייני רשימה בתפריט ניווט ראשי*/
+    nav ul {
+        list-style: none;
+        font-family: 'Rubik-Medium';
+        display: flex;
+        justify-content: center; /*חלוקת תפריט הניווט לטורים שווים*/
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul li {
+            font-family: Rubik-Medium;
+            width: 175px;
+    }
+
+/*הגדרת מעבר עכבר על פריט רשימה בתפריט ניווט ראשי*/
+        nav ul li > a:hover,
+        nav ul li > a:focus,
+        nav ul li > a:focus-within {
+            background-image: url('../images/pinkinmenu.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+     nav ul li a {
+                display: block;
+                padding-right: 7px;
+     }
+
+/*הגדרת תת-תפריט מוסתר*/
+        nav ul li ul {
+            display: none;
+        }
+
+
+
+/*ביטול קו תחתון לקישורים בהדר*/
+header a,
+footer a,
+#HPmain aside section a,
+#Accesability aside section  a {
+    text-decoration: none;
+}
+/*שינוי צבע ברירת מחדל לקישור*/
+header a,
+#HPmain aside section a,
+#Accesability aside section a {
+    color: #000;
+}
+
+footer a {
+    color: #fff;
+}
+
+    footer ul li a:hover,
+    footer ul li a:focus {
+        font-family: Rubik-Bold;
+        font-size: 16px;
+        color: rgba(146, 216, 255, 1);
+    }
+
+
+/*הגדרת שינוי משקל פונט למעבר על פריט בתפריט */
+nav a:hover,
+nav a:focus
+nav a:focus-within {
+    font-family: Rubik-Medium;
+}
+
+/*הצגת תת תפריט במעבר עכבר*/
+.start:hover > ul,
+.start:focus > ul,
+.start:focus-within > ul {
+    display: flex;
+}
+
+.menu-open .link-sub-menu:hover, .menu-open .link-sub-menu:focus, .link-sub-menu:focus-within {
+    background-size: cover;
+    background-position: center;
+    padding-top: 0;
+}
+
+.link-sub-menu:hover a,
+.link-sub-menu:focus a,
+.link-sub-menu:focus-within a, {
+        height: 25px;
+        display: flex;
+        align-items: center;
+    }
+
+.menu-open,
+.sub-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 6px;
+}
+
+/*הגדרת תת תפריט משני*/
+.sub-menu {
+    padding-top: 0;
+}
+
+.menu-open .sub-menu li {
+    padding: 0;
+    background-image: url('../images/darkgreynav.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    font-family: Rubik-Medium;
+}
+
+ .sub-menu li a {
+    color: #FFF;
+}
+
+.menu-open .sub-menu li a:hover,
+.menu-open .sub-menu li a:focus
+.menu-open .sub-menu li a:focus-within {
+    color: #000;
+}
+
+.menu-open .sub-menu li:hover,
+.menu-open .sub-menu li:focus
+.menu-open .sub-menu li:focus-within {
+    color: #000;
+}
+ /*הגדרות לתת תפריט ראשי*/
+.menu-open li {
+    background-image: url('../images/grayLi.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    padding: 5px 0;
+    font-family: 'Rubik-Regular';
+}
+
+nav ol {
+    position: absolute;
+    top:185px;
+    right:220px;
+    height: 20px;
+    z-index: 1;
+}
+
+nav ol li {
+    display:inline-block;
+}
+
+    nav ol li a {
+        text-decoration: underline;
+        z-index: 1;
+    }
+
+nav ol li:after {
+    content: " > ";
+}
+
+nav ol li:last-child:after {
+    content: "";
+}
+
+
+/*איזור לחצני כניסה מהירה*/
+
+.btn {
+    border: none;
+    box-shadow: 0px 7px 5px grey;
+    background-color: transparent;
+}
+.btn:hover,
+.btn:focus {
+        background-color: #3F3434;
+}
+
+
+.btn a:hover,
+.btn a:focus,
+#sandform:hover,
+#sandform:focus {
+    
+    color: #F7F7F7;
+}
+
+.btn:active
+     {
+border: 1px solid #939598;
+transform: translateY(-2px);
+transform: translateX(-2);
+transition: .25s ease;
+box-shadow: none;
+background-color: #3F3434;
+color: #F7F7F7;
+    }
+
+/*סגנון לחצי כניסה מהירה*/
+.direct-btn {
+    background-color: #F7F7F7;
+    border-style: outset;
+    border-width: 5px 5px 1px 1px;
+    width: 77px;
+    margin: 27px 6px;
+    text-align: center;
+    padding: 7px 0px;
+    display: block;
+}
+
+#advice-btn {
+    background-color: #3F3434;
+    color: #F7F7F7;
+}
+
+
+
+
+/*קישורים לא פעילים בתפריט*/
+.noactiveH {
+    cursor: not-allowed;
+}
+.noactiveH:active {
+        cursor: not-allowed;
+}
+
+ /*קישורים לא פעילים */
+.noactiveinside {
+        cursor: not-allowed;
+        color: gray;
+}
+
+#HPmain,
+#Aboutmain,
+#friends,
+#Legalsmain,
+#funeral,
+#caraccidents,
+#Accesability,
+#contactus {
+    position: relative;
+    top: 0;
+    width: 1140px;
+    padding: 30px 70px;
+    height: auto;
+}
+
+article, aside, form {
+    width: 1070px;
+    padding: 30px 0;
+    height: auto;
+}
+
+#opening, #Acc-opening {
+    background-image: url('../images/grieving.svg');
+    background-size: 420px auto;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+p#credit, #credit a {
+    font-family: 'Rubik',sans-serif;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+}
+p#credit, #credit a {
+    font-family: 'Rubik',sans-serif;
+    font-size: 10px;
+    text-align: left;
+}
+
+.wide-btn {
+    width: auto;
+    height: 54px;
+    background-color: #F7F7F7;
+    border-style: outset;
+    border-width: 5px 5px 1px 1px;
+}
+
+#action-Btn:hover,
+.wide-btn:hover,
+.read-more-trigger:hover {
+    background-color: #3F3434;
+    color: #F7F7F7;
+}
+
+#action-Btn {
+    margin-top: 12px;
+    margin-right: 345px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#HPmain aside section,
+#Accesability aside section{
+    margin-top: 50px;
+    width: 1175px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#HPmain aside section div,
+#Accesability aside section div,
+#updates{
+        align-content: flex-start;
+        background-repeat: no-repeat;
+        height: 340px;
+        width: 252px;
+        padding-top: 60px;
+}
+
+#HPmain aside section div,
+#Accesability aside section div{
+        box-shadow: 2px 7px 5px grey;
+        background-position: top center;
+}
+
+#HPmain aside section p,
+#Accesability aside section p,
+#HPmain aside section h5,
+#Accesability aside section h5 {
+        margin-bottom: 10px;
+        padding-right: 40px;
+}
+
+#HPmain aside section div img,
+#Accesability  aside section div img{
+        padding: 0 20px;
+        width: 210px;
+}
+
+
+.H-Updates {
+    font-size: 18px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+}
+
+#updates {
+    background-image: url('../images/HPHpdates.png');
+    background-repeat: no-repeat;
+}
+
+#updates h5{padding-top:0;}
+
+#updates ul li,
+#updates ul li{
+        list-style: none;
+        font-family: Rubik-Regular,sans-serif;
+        margin-bottom: 20px;
+    }
+
+#updatelist {
+    width: 245px;
+    text-align:right;
+}
+
+#HPmain .morecontent,
+#Accesability .morecontent {
+    background-image: url('../images/HpFrame.png');
+    background-repeat: no-repeat;
+
+}
+
+
+#HPmain .morecontent:hover,
+#HPmain .morecontent:focus,
+#Accesability .morecontent:hover,
+#Accesability .morecontent:focus {
+        background-image: url('../images/HPHpdates.png');
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: 2px groove #002488;
+    }
+
+#HPmain .morecontent:hover a,
+#HPmain .morecontent:focus a,
+ #Accesability .morecontent:hover a,
+#Accesability .morecontent:focus a {
+            color: #002488;
+            background-image: url('../images/HPHpdates.png');
+            background-repeat: no-repeat;
+            background-color: transparent;
+}
+
+
+.pink {color: deeppink;}
+
+
+footer {
+    display: flex;
+    flex: 1 auto;
+    justify-content:space-around;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #F7F7F7;
+    padding: 15px;
+}
+
+    footer ul {
+        list-style: none;
+        line-height: 20px;
+    }
+
+footer ul li {
+            font-family: Rubik-Medium;
+            font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    padding-bottom: 10px;
+}
+
+p,
+ul,
+ol,
+il,
+table,
+th,
+td {
+    font-family: Rubik-Regular;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+
+
+
+h1 {
+    font-family: 'Rubik-Bold', sans-serif;
+    font-size: 24px;
+}
+
+h2 {
+    font-family: 'Rubik-Bold', sans-serif;
+    font-size: 18px;
+}
+
+h3,
+caption{
+    font-family: Rubik-Medium;
+    font-size:18px;
+}
+
+/*טקסט קטן לתרשים שלבים*/
+h4 {
+    font-family:Rubik-Regular, sans-serif;
+    font-size: 14px;
+}
+
+h5 {
+    padding-top:20px;
+    font-family: Rubik-Regular, sans-serif;
+    font-size: 12px;
+}
+
+.bold {font-family: Rubik-Bold, sans-serif;}
+
+/*פתיחת מידע מוסתר*/
+details {
+    margin-bottom: 20px;
+}
+
+.doornot {    
+    background-position-y: 130px;
+    background-position-x: 134px;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    width: 630px;
+    padding: 30px 0px 30px 450px;
+}
+
+#todoimg {
+    background-image: url('../images/team-spirit-2447163_1280.jpg');
+}
+
+#notodoimg {
+    background-image: url('../images/holding-hands-752878_1280.jpg');
+}
+
+#sumlist {
+    width: 210px;
+    height: 22px;
+    padding: 12px 5px;
+    margin: -17px 870px 10px;
+    box-shadow: 0px 7px 5px grey;
+}
+
+#goodoing, #nodoing {
+    width: 180px;
+    height: 22px;
+    padding: 12px 5px;
+    margin: -7px 746px 10px;
+    box-shadow: 0px 7px 5px grey;
+}
+
+.leftbtn {margin-right:800px;
+          margin-top: -2px;
+  }
+
+table {
+    margin: 5px 0;
+    width: 100%;
+    text-align: right;
+}
+
+caption {text-align:right;
+}
+
+th,
+td {border: 1px solid rgba(0,0,0, 0.5);
+        padding:5px;
+       
+}
+
+.form {margin-top:220px;}
+
+.acc {
+    position:absolute;
+    right:1170px;
+    top:194px;
+    width: 77px;
+    height: 77px;
+    z-index:20;
+}
+
+.icon {
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+
+.arrow {
+     padding:35px 15px;
+     width:30px;
+     height:30px;
+ }
+
+.levels {
+     display:flex;
+     flex: 1;
+     margin:50px 0;          
+ }
+
+.icon_ancur{ margin-left:50px;}
+
+/*שימוש בטאבים*/
+.pc-tab > input,
+.pc-tab section > div {
+    display: none;
+}
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3 {
+    display: block;
+}
+
+#tab1:checked ~ nav .tab1,
+#tab2:checked ~ nav .tab2,
+#tab3:checked ~ nav .tab3 {
+    background-color: #002488;
+    color:white;
+}
+
+.pc-tab {
+    width: 100%;
+    max-width: 1070px;
+    
+}
+
+    .pc-tab > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+}
+
+.pc-tab ul li label {
+            float: right;
+            width: 143px;
+            padding: 15px 15px;
+            border: 1px solid #ddd;
+            border-bottom: 0;
+            background-color: transparent;
+}
+
+.pc-tab ul li label:hover {
+                background-color: #B3DEFF;
+                color:black;
+}
+
+.pc-tab ul li label:active {
+                background-color: #002488;
+                font-family:Rubik-Medium,sans-serif;
+}
+
+.pc-tab ul li label:not(:last-child) label {
+                border-right-width: 0;
+}
+
+.navtabs {
+    width: 1070px;
+    
+}
+
+.navtabs > ul {
+    justify-content: flex-start;
+}
+
+.tabs div {
+    height: 272px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: rgba(212,239,255,0.5);
+    line-height: 1.5em;
+    letter-spacing: 0.3px;
+    color: #444;
+}
+
+.tabs ul li {margin-bottom:10px;}
+
+
+.tabs div h2 {
+        margin: 0;
+        letter-spacing: 1px;
+        color: #34495e;
+    }
+
+/*כפתורים בהליך משפטי*/
+.legalbtn {
+    margin-right: 400px;
+    width:154px;
+
+}
+
+/*כפתורי תרשים שלבים*/
+.lvlbtn {
+    box-shadow: 0px 7px 5px grey;
+    border-style: outset;
+    border-width: 5px 5px 1px 1px;
+    width: 120px;
+    height:130px;
+    text-align: center;
+    padding: 7px 0px;
+
+}
+
+.lvlbtn a, .btn a {
+        text-decoration: none;
+        color: black;
+    }
+ 
+
+.lvlbtn:hover{
+        background-color: #A8D8FF;
+        color:black;
+        font-family: Rubik-Bold;       
+    }
+
+
+/*תמונת שעות ניחום אבלים*/
+#visithours {
+    width: 500px;
+    height: auto;
+    display: inline;
+    float: right;
+    margin: 5px 0 0 15px;
+}
+/*טקסט ממוסגר לשעות ניחום*/
+#visitext {
+    padding-top: 15px;
+    padding-bottom: 7px;
+    background-color: white;
+    border: 1px solid #ddd;
+    background-color: rgba(250,250,250,0.75);
+}
+/*כפתורי הרחבה וצמצום בדף תאונת דרכים*/
+#morespesial2, #morelvl3car {
+    width: 180px;
+    height: 22px;
+    padding: 12px 5px;
+    margin: -7px 746px 10px;
+    box-shadow: 0px 7px 5px grey;
+}
+
+.carmore {
+    width: 980px;
+}
+
+#caraccidentsimg {
+    background-image: url('../images/lawyer_fee_3.png');
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 300px;
+    width: 730px;
+    padding: 0px 0px 0px 350px;
+}
+
+form {
+    margin: 30px 0;
+    width: 30%;
+    padding:100px 70px 50px 70px;
+    background-image: url('../images/formfram_2.png');
+    background-repeat:no-repeat;
+}
+
+
+
+#firstname, #usremail, #lastname {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    margin:10px 0;
+}
+
+    #name:active, #name:active, #usremail:active, #phone:active,
+    #name:focus, #name:focus, #usremail:focus, #phone:focus {
+        background-color: white;
+        color: #002488;
+        border: 2px solid deeppink;
+    }
+
+.check {width: 50px;
+     margin: 10px;
+}
+
+.txt {width: 100%;}
+
+textarea {width: 100%;
+          height: 100px;
+          border: 2px solid deeppink;
+  }
+
+#sandform { 
+    width: 100%;
+    height: 40px;
+}
+
+#contactus {
+    background-image: url('../images/i_miss_you.png');
+    background-position-x:90px;
+    background-position-y:center;
+    background-size: 450px;
+    background-repeat:no-repeat;
+}
+ 
+
